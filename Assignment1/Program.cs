@@ -6,7 +6,19 @@ namespace Assignment1
     // TODO Add supporting classes here
     public class OperatorClass
     {
-       
+        public static int OperatorOrder(char op)
+        {
+            if (op == '+' || op == '-')
+                return 1;
+            if (op == '*' || op == '/')
+                return 2;
+            return 0;
+        }
+
+        public static bool IsOperator(char c)
+        {
+            return c == '+' || c == '-' || c == '*' || c == '/';
+        }
     }
     public class InfixToPostfix
     {
