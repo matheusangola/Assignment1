@@ -11,8 +11,11 @@ namespace Assignment1
         {
             try
             {
+                input = input.Replace(" ", "");
+
+                String result = "0.0";
                 // TODO Evaluate the expression and return the result
-                return "";
+                return result;
             }
             catch (Exception e)
             {
