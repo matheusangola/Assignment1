@@ -4,6 +4,21 @@ using System.Collections.Generic;
 namespace Assignment1
 {
     // TODO Add supporting classes here
+    public class OperatorClass
+    {
+       
+    }
+    public class InfixToPostfix
+    {
+        
+    }
+
+    public class Calc
+    {
+        
+    }
+
+
 
     public class Program
     {
@@ -14,7 +29,7 @@ namespace Assignment1
                 input = input.Replace(" ", "");
 
                 String result = "0.0";
-                // TODO Evaluate the expression and return the result
+
                 return result;
             }
             catch (Exception e)
