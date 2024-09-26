@@ -25,9 +25,31 @@ namespace Assignment1
         
     }
 
+    // Add by Renato Paz
     public class Calc
     {
-        
+        public static double EvaluatePostfix(string postfix)
+        {
+            Stack<double> stack = new Stack<double>();
+            string[] tokens = postfix.Split(' ');
+
+            foreach (string token in tokens)
+            {
+                if (double.TryParse(token, out double number))
+                {
+                    stack.Push(number); // If it's a number, push it onto the stack
+                }
+                else if (token.Length == 1 && OperatorClass.IsOperator(token[0]))
+                {
+                    // If it's an operator, pop two numbers and apply the operation
+                    double b = stack.Pop();
+                    double a = stack.Pop();
+                    stack.Push(OperatorClass.ApplyOperation(a, b, token[0]));
+                }
+            }
+
+            return stack.Pop(); // The result will be the last item in the stack
+        }
     }
 
 
