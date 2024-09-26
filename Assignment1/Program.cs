@@ -25,31 +25,10 @@ namespace Assignment1
         
     }
 
-    // Add by Renato Paz
+    
     public class Calc
     {
-        public static double EvaluatePostfix(string postfix)
-        {
-            Stack<double> stack = new Stack<double>();
-            string[] tokens = postfix.Split(' ');
-
-            foreach (string token in tokens)
-            {
-                if (double.TryParse(token, out double number))
-                {
-                    stack.Push(number); // If it's a number, push it onto the stack
-                }
-                else if (token.Length == 1 && OperatorClass.IsOperator(token[0]))
-                {
-                    // If it's an operator, pop two numbers and apply the operation
-                    double b = stack.Pop();
-                    double a = stack.Pop();
-                    stack.Push(OperatorClass.ApplyOperation(a, b, token[0]));
-                }
-            }
-
-            return stack.Pop(); // The result will be the last item in the stack
-        }
+        
     }
 
 
@@ -71,13 +50,15 @@ namespace Assignment1
                 return "Error evaluating expression: " + e;
             }
         }
-
-        static void Main(string[] args)
+// adjusted by Renato Paz
+    static void Main(string[] args)
         {
+            Console.WriteLine("Enter a mathematical expression (or 'exit' to quit):");
             string input;
             while ((input = Console.ReadLine()) != "exit")
             {
                 Console.WriteLine(ProcessCommand(input));
+            }
             }
         }
     }
