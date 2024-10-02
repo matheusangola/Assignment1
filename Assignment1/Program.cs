@@ -142,10 +142,77 @@ namespace Assignment1
 
     public class Calc
     {
-        
+        public static double CalcPostfix(List<string> tokens)
+
+        {
+
+            Stack<double> stack = new Stack<double>();
+
+            foreach (var token in tokens)
+
+            {
+
+                if (double.TryParse(token, out double num))
+
+                {
+
+                    stack.Push(num);
+
+                }
+
+                else if (token == "+" || token == "-" || token == "*" || token == "/")
+
+                {
+
+                    double b = stack.Pop();
+
+                    double a = stack.Pop();
+
+                    double result = 0;
+
+                    switch (token)
+
+                    {
+
+                        case "+":
+
+                            result = a + b;
+
+                            break;
+
+                        case "-":
+
+                            result = a - b;
+
+                            break;
+
+                        case "*":
+
+                            result = a * b;
+
+                            break;
+
+                        case "/":
+
+                            result = a / b;
+
+                            break;
+
+                    }
+
+                    stack.Push(result);
+
+                }
+
+            }
+
+            return stack.Pop();
+
+        }
+
     }
 
-
+    //testing changes
 
     public class Program
     {
