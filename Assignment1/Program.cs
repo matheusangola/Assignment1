@@ -222,9 +222,13 @@ namespace Assignment1
             {
                 input = input.Replace(" ", "");
 
-                String result = "0.0";
+                List<string> postFixValue = InfixToPostfix.ConvertToPostfix(input);
 
-                return result;
+                //Console.WriteLine("RPN Expression: " + string.Join(" ", postFixValue));
+
+                double result = Calc.CalcPostfix(postFixValue);
+
+                return result.ToString();
             }
             catch (Exception e)
             {
