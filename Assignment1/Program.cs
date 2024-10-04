@@ -244,7 +244,6 @@ namespace Assignment1
             {
                 Console.WriteLine(ProcessCommand(input));
             }
-            }
         }
     }
 }
