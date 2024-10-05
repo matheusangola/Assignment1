@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Assignment1
 {
-    // TODO Add supporting classes here
+    // This class helps the InfixToPostFix know the operators order
     public class OperatorClass
     {
         public static int OperatorOrder(char op)
@@ -20,6 +20,8 @@ namespace Assignment1
             return c == '+' || c == '-' || c == '*' || c == '/';
         }
     }
+
+    // Transform user input to postfix expression
     public class InfixToPostfix
     {
         public static List<string> ConvertToPostfix(string input)
@@ -139,7 +141,7 @@ namespace Assignment1
 
     }
 
-
+    // Calculates the postfix value using switch case.
     public class Calc
     {
         public static double CalcPostfix(List<string> tokens)
@@ -212,8 +214,6 @@ namespace Assignment1
 
     }
 
-    //testing changes
-
     public class Program
     {
         public static string ProcessCommand(string input)
@@ -235,7 +235,6 @@ namespace Assignment1
                 return "Error evaluating expression: " + e;
             }
         }
-// adjusted by Renato Paz
     static void Main(string[] args)
         {
             Console.WriteLine("Enter a mathematical expression (or 'exit' to quit):");
